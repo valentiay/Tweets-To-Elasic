@@ -5,7 +5,7 @@ import com.nykytenko.config.SparkConfig
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-case class SparkConfigService[F[_]]()(implicit E: Effect[F]) {
+case class SparkConfigService[F[_]: Effect]() {
   def load(conf: SparkConfig): StreamingContext = {
     val sparkConf = new SparkConf()
       .setAppName(conf.name)

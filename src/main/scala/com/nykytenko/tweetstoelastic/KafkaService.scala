@@ -25,7 +25,7 @@ case class KafkaService() {
     )
   }
 
-  def createStreamFromKafka[F[_]](topics: List[String])(ssc: StreamingContext)(implicit E: Effect[F]): InputDStream[ConsumerRecord[String, String]] = {
+  def createStreamFromKafka[F[_]: Effect](topics: List[String])(ssc: StreamingContext): InputDStream[ConsumerRecord[String, String]] = {
       KafkaUtils.createDirectStream[String, String](
         ssc,
         preferredHosts,

@@ -3,8 +3,8 @@ import sbt._
 object Dependencies {
   object Version {
     val PureConfig = "0.9.1"
-    val Cats       = "1.0.1"
-    val CatsEffect = "1.0.0"
+    val Cats       = "1.6.0"
+    val CatsEffect = "1.2.0"
     val Spark      = "2.4.0"
     val Kafka      = "2.0.0"
     val Slf4j      = "1.7.25"
